@@ -10,10 +10,10 @@ public class Main {                                //Main class containing the m
 //First part of the Assignment, where we can calculate the SoH of the battery by the given formula and classify them
   
   
-    static CountsBySoH countBatteriesByHealth(int[] presentCapacities) {    //static method to use methods without creation of objects explisitely
+    static CountsBySoH countBatteriesByHealth(int[] presentCapacities) {    //static method to use methods without creation of objects explisitely of type 'CountsBySoH' 
         CountsBySoH counts = new CountsBySoH();
 
-        for (int capacity : presentCapacities) {
+        for (int capacity : presentCapacities) {    //for-each or enhanced for loop used to test each element of the array named presentCapacities
             double soh = (capacity * 100.0) / 120; // it calculates SoH as a percentage as givn
 
             if (soh > 80) {             // if SoH is greater than 80
@@ -30,15 +30,15 @@ public class Main {                                //Main class containing the m
   //Second part of the Assignment, where we can decide 
 
     static void testBucketingByHealth() {      //called from Main method
-        System.out.println("Counting batteries by SoH...\n");      //denotes the main intension of the program
-        int[] presentCapacities = {115, 118, 80, 95, 91, 72};
-        CountsBySoH counts = countBatteriesByHealth(presentCapacities);
+        System.out.println("Counting batteries by SoH...\n");      //denotes the main intension of the program to the user
+        int[] presentCapacities = {115, 118, 80, 95, 91, 72};        //gives the array of capacities of many batteries
+        CountsBySoH counts = countBatteriesByHealth(presentCapacities);    //assigns the returned method values to the variable count
 
-        System.out.println("Number of Healthy Batteries: " + counts.healthy);
+        System.out.println("Number of Healthy Batteries: " + counts.healthy);        //prints count of each in a easy redeable print statements 
         System.out.println("Number of Replace Batteries: " + counts.replace);
         System.out.println("Number of Failed Batteries: " + counts.failed);
         
-        System.out.println("Done counting :)\n");
+        System.out.println("Done counting :)\n");            //tells the user that it is the end of the program
     }
 
     public static void main(String[] args) {   //Execution of code starts from here
